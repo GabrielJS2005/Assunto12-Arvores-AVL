@@ -1,0 +1,51 @@
+package main;
+
+import arvores.ArvoreAVL;
+
+import java.util.Scanner;
+
+public class menuAVL {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        ArvoreAVL avl = new ArvoreAVL();
+        int opcao;
+
+        do {
+
+            System.out.println("0 - Sair");
+            System.out.println("1 - Inserir");
+            System.out.println("2 - Mostrar FB de cada Nó");
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+
+                case 0:
+                    System.out.println("Encerrando o programa");
+
+                    break;
+                case 1:
+                    System.out.println("Informe o valor para inserir na ABB: ");
+                    int valor = entrada.nextInt();
+
+                    avl.root = avl.inserirH(avl.root, valor);
+
+                    break;
+                case 2:
+                    System.out.println("\n Apresentação: ");
+
+                    avl.mostraAVL(avl.root);
+
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+
+            }
+
+        } while (opcao != 0);
+
+    }// main
+
+}// class
