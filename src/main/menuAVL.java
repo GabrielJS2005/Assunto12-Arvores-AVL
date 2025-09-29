@@ -30,7 +30,8 @@ public class menuAVL {
                     System.out.println("Informe o valor para inserir na ABB: ");
                     int valor = entrada.nextInt();
 
-                    avl.root = avl.inserirH(avl.root, valor);
+                    avl.root = avl.inserirAVL(avl.root, valor);
+                    avl.atualizaAlturas(avl.root);
 
                     break;
                 case 2:
