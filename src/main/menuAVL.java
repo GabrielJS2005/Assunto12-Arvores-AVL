@@ -18,6 +18,7 @@ public class menuAVL {
             System.out.println("0 - Sair");
             System.out.println("1 - Inserir");
             System.out.println("2 - Mostrar FB de cada Nó");
+            System.out.println("3 - Remover Nó da AVL");
             opcao = entrada.nextInt();
 
             switch (opcao) {
@@ -38,6 +39,15 @@ public class menuAVL {
                     System.out.println("\n Apresentação: ");
 
                     avl.mostraAVL(avl.root);
+
+                    break;
+                case 3:
+                    System.out.println("Informe o valor a ser removido: ");
+                    valor = entrada.nextInt();
+
+                    avl.root = avl.removeValor(avl.root, valor);
+                    avl.root = avl.atualizaAlturaBalanceamento(avl.root);
+                    avl.atualizaAlturas(avl.root);
 
                     break;
                 default:
